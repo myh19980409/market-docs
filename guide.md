@@ -16,4 +16,4 @@ TODO
 ### 流程图
 流程图请使用 [draw.io](https://app.diagrams.net/) 绘制，IDEA 里面应该有插件，保存为 svg 格式然后用上述插入图片方式引入。
 
-![](images/demo_flowchart.svg)
+![](./images/demo_flowchart.svg)
