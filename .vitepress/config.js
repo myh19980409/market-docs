@@ -3,7 +3,7 @@
  */
 module.exports = {
   lang: "zh-CN",
-  base: "",
+  base: "/market-docs/",
   themeConfig: {
     nav: [
       { text: "配置指南", link: "/guide" },
