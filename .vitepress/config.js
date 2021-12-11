@@ -10,6 +10,7 @@ module.exports = {
     nav: [
       { text: "配置指南", link: "/guide" },
       { text: "API文档", link: "/api" },
+      { text: "数据库结构", link: "/database" },
     ]
   }
 }
