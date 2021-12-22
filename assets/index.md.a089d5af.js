@@ -1,0 +1,1 @@
+import{_ as e,c as t,o as a,b as o}from"./app.91e3e7c6.js";const f='{"title":"Home","description":"","frontmatter":{"home":true,"actionText":"Get Started","actionLink":"guide"},"relativePath":"index.md","lastUpdated":1640143234971}',n={},s=o("p",null,"home",-1),c=[s];function r(i,d,_,p,l,m){return a(),t("div",null,c)}var h=e(n,[["render",r]]);export{f as __pageData,h as default};
