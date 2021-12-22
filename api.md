@@ -77,47 +77,6 @@ UPDATE `/profile`
 #### 返回格式
 HTTP状态码，200成功
 
-## 商品相关
-
-### 获取首页
-#### 请求格式
-GET `/home`
-
-#### 返回格式
-```json
-[
-    {
-        "id": 114514,
-        "uploadtime": 1640000000,
-        "name": "",
-        "level": 9,
-        "remark": "",
-        "price": "",
-        "sort": "",
-        "count": "",
-        "display": "",
-        "sales": "",
-        "uid": 1001,
-        "image": "xxxxxxxxxxxxxxxxx.jpg",
-    },
-    // ...
-]
-```
-- `id`: 主键（商品id）
-- `uploadtime`: 上传时间
-- `name`: 商品名称
-- `level`: 商品成色（几成新）
-- `remark`: 商品详细信息
-- `price`: 商品价格
-- `sort`: 商品类别
-- `count`: 商品数量
-- `display`: 商品是否被下架
-- `sales`: 商品销量
-- `uid`: 发表的用户id
-- `image`: 商品的图片地址
-
-（其实是复制的）
-
 ### 获取用户发布商品列表
 GET `/item?uid=1001`
 
@@ -147,7 +106,107 @@ GET `/item?uid=1001`
 ]
 ```
 
-（同上）
+- `id`: 主键（商品id）
+- `uploadtime`: 上传时间
+- `name`: 商品名称
+- `level`: 商品成色（几成新）
+- `remark`: 商品详细信息
+- `price`: 商品价格
+- `sort`: 商品类别
+- `count`: 商品数量
+- `display`: 商品是否被下架
+- `sales`: 商品销量
+- `uid`: 发表的用户id
+- `image`: 商品的图片地址
+
+（其实是复制的）
+
+### 我的收藏
+#### 请求格式
+GET `/favorite`
+
+携带cookies
+
+#### 返回格式
+```json
+[
+    {
+        "id": 114514,
+        "uploadtime": 1640000000,
+        "name": "",
+        "level": 9,
+        "remark": "",
+        "price": "",
+        "sort": "",
+        "count": "",
+        "display": "",
+        "sales": "",
+        "uid": 1001,
+        "image": "xxxxxxxxxxxxxxxxx.jpg",
+    },
+    // ...
+]
+```
+
+（同发布商品列表）
+
+### 购物车
+#### 请求格式
+GET `/cart`
+
+携带cookies
+
+#### 返回格式
+```json
+[
+    {
+        "id": 114514,
+        "uploadtime": 1640000000,
+        "name": "",
+        "level": 9,
+        "remark": "",
+        "price": "",
+        "sort": "",
+        "count": "",
+        "display": "",
+        "sales": "",
+        "uid": 1001,
+        "image": "xxxxxxxxxxxxxxxxx.jpg",
+    },
+    // ...
+]
+```
+
+（同发布商品列表）
+
+## 商品相关
+
+### 获取首页
+#### 请求格式
+GET `/home`
+
+#### 返回格式
+```json
+[
+    {
+        "id": 114514,
+        "uploadtime": 1640000000,
+        "name": "",
+        "level": 9,
+        "remark": "",
+        "price": "",
+        "sort": "",
+        "count": "",
+        "display": "",
+        "sales": "",
+        "uid": 1001,
+        "image": "xxxxxxxxxxxxxxxxx.jpg",
+    },
+    // ...
+]
+```
+
+思考：首页是否需要带 `remark`
 
 ### 发布商品
 #### 请求格式
@@ -215,10 +274,48 @@ DELETE `/item?id=114514`
 HTTP状态码，200成功
 
 ### 搜索
-`/search`
+#### 请求格式
+GET `/search?q=keyword`
+
+#### 返回格式
+```json
+[
+    {
+        "id": 114514,
+        "uploadtime": 1640000000,
+        "name": "",
+        "level": 9,
+        "remark": "",
+        "price": "",
+        "sort": "",
+        "count": "",
+        "display": "",
+        "sales": "",
+        "uid": 1001,
+        "image": "xxxxxxxxxxxxxxxxx.jpg",
+    },
+    // ...
+]
+```
+
+（同获取首页）
 
 ### TODO
 TODO
 
-## TODO
-TODO
+## 通用接口
+### 上传图片
+#### 请求格式
+POST `/upload`
+
+body为图片
+
+#### 返回格式
+HTTP状态码，200表示成功
+
+```json
+{
+    "image": "xxxxxxxxxxxxxxxxx.jpg",
+}
+```
+按理说应该有些其他信息但我没想到加啥
